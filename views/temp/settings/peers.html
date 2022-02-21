@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/assets/img/icon.png"/><!-- Link to title icon logo--> 
+  <title>Adam BC</title>
+  <style>
+
+    html { margin-top: 15px; }
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages > li { padding: 0.5rem 1rem; }
+    #messages > li:nth-child(odd) { background: #efefef; }
+
+    .select {
+    position: absolute;
+    z-index: 10;
+    width: 168px;
+    height: 34px;
+    border: 1px solid #000;
+    }
+
+  </style>
+  <link rel="stylesheet" href="/assets/css/semantic.min.css">
+  <script src="/assets/js/jquery.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/assets/js/peers.js"></script>
+</head>
+<body bgcolor="white">
+  <div class="ui container">
+    <center> Peer Computing Networks Near You </center>
+    <div  class="ui segment" style="min-height: 400px; overflow-y: auto;">
+      <ul id="onlinePeers"><center>No active Peer computing Networks</center></ul>
+    </div>
+    <br/>
+  </div>
+  <script type="text/javascript">
+
+    function popUp(url, name){
+    
+      var left = (screen.width-600)/2;
+      var top = (screen.height-400)/4;
+      
+      // Launch Start URL
+      (function(){
+        window.open(url, name, 'directories=no, status=no, scrollbars=no, resizable=no, copyhistory=no, menubar=no,width=600,height=400,toolbar=no,location=no,left='+left+',top='+top);
+      }());
+    
+    }
+    
+    </script>
+</body>
+</html>
+

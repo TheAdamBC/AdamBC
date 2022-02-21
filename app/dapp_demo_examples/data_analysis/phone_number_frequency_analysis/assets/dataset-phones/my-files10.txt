@@ -1,0 +1,5 @@
+Streaming Contents with fs.createReadStream.
+The second way to open and read a file is to open it as a Stream using the fs.createReadStream 
+method. 
+All Node streams are instances of the EventEmitter object and allowing you to subscribe to 
+important events. Call: 256786814934

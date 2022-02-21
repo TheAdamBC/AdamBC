@@ -1,0 +1,5 @@
+Streaming Contents with fs.createReadStream.
+The second way to open and read a file is to open it as a Stream using the fs.createReadStream 
+method. 
+Email to: pvakindu@gmail.com
+Email to: vakindu@gmail.com

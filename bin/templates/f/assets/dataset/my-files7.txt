@@ -1,0 +1,1 @@
+Buffering Contents with fs.readFile.

@@ -1,0 +1,8 @@
+Although as you will come to realize in the next section and it is not 
+necessarily the best or most efficient.
+Email to: vakindu@gmail.com
+Email to: pvakindu@gmail.com
+All Node streams are instances of the EventEmitter object and allowing you to subscribe to 
+important events.
+Email to: pvakindu@gmail.com
+Email to: vakindu@gmail.com

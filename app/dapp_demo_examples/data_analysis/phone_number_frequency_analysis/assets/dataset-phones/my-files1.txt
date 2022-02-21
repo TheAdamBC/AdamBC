@@ -1,0 +1,9 @@
+One of the most common things you want to do with just about any programming language is 
+open and read a file. Call: 256785571876
+With most languages, this is pretty simple, but for JavaScript veterans it might seem a bit 
+weird. Call: 256786814934
+For so many years JavaScript was only available in the browser and so front-end developers may 
+only be familiar with the FileReader API or similar. Call: 256711083080
+
+
+

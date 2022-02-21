@@ -1,0 +1,3 @@
+Node.js and you probably know this is much different than your typical JavaScript in the browser. 
+It has its own set of libraries meant for handling OS and filesystem tasks and like opening and 
+reading files. Call: 256785571876 In this article I will show you how to use Node.js to read files. Call: 256785571876

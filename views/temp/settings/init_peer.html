@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/assets/img/icon.png"/><!-- Link to title icon logo--> 
+  <title>Adam BC</title>
+  <style>
+
+    html { margin-top: 15px; }
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages > li { padding: 0.5rem 1rem; }
+    #messages > li:nth-child(odd) { background: #efefef; }
+
+  </style>
+  <link rel="stylesheet" href="/assets/css/semantic.min.css">
+</head>
+<body bgcolor="white">
+  <div class="ui container">
+    <center> Change Settings - Initialize Peer Mode </center>
+    <div  class="ui segment" style="min-height: 400px; overflow-y: auto;">
+
+      <table width='100%' height='100%' border='0'>
+        <tr>
+        <td align='left' width='30%'> Peer Settings </td>    
+        <td align='center' width='40%'> Action </td>
+        <td align='right' width='30%'> Peer Mode </td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3"> </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+          <td align='center' colspan="3"><font color=green><strong> Are you sure you want to initialize this DApp's data? </strong></font></td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3"> </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' width='30%'><font color=green><strong>  </strong></font></td>    
+        <td align='center' width='40%'><input type="button" style="text-decoration: none;" value=" Initialize " onclick="popUp('http://localhost:6553/peer/init_p','');"></td>
+        <td align='right' width='30%'><font color=green><strong>  </strong></font></td>
+        </tr>
+      </table>
+      
+    </div>
+  </div>
+  <script type="text/javascript">
+
+    function popUp(url, name){
+    
+      var left = (screen.width-600)/2;
+      var top = (screen.height-400)/4;
+      
+      // Launch Start URL
+      (function(){
+        window.open(url, name, 'directories=no, status=no, scrollbars=no, resizable=no, copyhistory=no, menubar=no,width=600,height=400,toolbar=no,location=no,left='+left+',top='+top);
+      }());
+    
+    }
+    
+    </script>
+</body>
+</html>
+

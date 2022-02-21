@@ -1,0 +1,1 @@
+{"builderID":"BUDXI-4565782-XVL","TaskID":"TUD-7835640-JKL","oPartition":30000,"xPartition":1000,"iPartition":0,"tPartition":31000,"Timestamp":"2021-08-31T03:33:16.966Z","running":false,"tDuration":60,"uParams":{"parameter1":"","parameter2":"","parameter3":"","parameter4":""}}

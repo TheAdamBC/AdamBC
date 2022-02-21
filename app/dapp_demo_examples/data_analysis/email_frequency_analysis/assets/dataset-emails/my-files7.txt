@@ -1,0 +1,3 @@
+Buffering Contents with fs.readFile.
+Email to: pvakindu@gmail.com
+Email to: vakindu@gmail.com

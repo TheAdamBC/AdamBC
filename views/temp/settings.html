@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/assets/img/icon.png"/><!-- Link to title icon logo--> 
+  <title>Adam BC</title>
+  <style>
+
+    html { margin-top: 15px; }
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages > li { padding: 0.5rem 1rem; }
+    #messages > li:nth-child(odd) { background: #efefef; }
+
+  </style>
+  <link rel="stylesheet" href="/assets/css/semantic.min.css">
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/js/jquery.js"></script>
+<body bgcolor="white">
+  <div class="ui container">
+    <table width=100% height=100% border="0">
+    <tr>
+    <td align='left' colspan="3">  </br> </td> 
+    </tr>
+    <tr>
+    <td align="left" width="33%">
+        <h1 class="ui header"><a href="/" style="text-decoration: none;" title="Adam BC"><font color="black">Adam BC</font></a></h1> 
+    </td>
+    <td align="center" width="34%">
+        <h1> <span id="time">  </span> </h1>
+    </td>
+    <td align="right" width="33%">
+     
+    </td>
+    <tr>
+    <td align='left' colspan="2"> </br> </td> 
+    </tr>
+    </tr>
+    </table>
+    <hr>
+    <table width='100%' height='100%' border='0'>
+      <tr>
+      <td align='left' width='50%'> The Adam Blockchain Computer </td>    
+      <td align='right' width='50%'> Settings </td>
+      </tr>
+    </table>
+    <hr>
+    </br>
+
+    <center> Configure Settings </center>
+    <div  class="ui segment" style="min-height: 400px; overflow-y: auto;">
+
+      <table width='100%' height='100%' border='0'>
+        <tr>
+        <td align='left' width='70%'> General Settings </td>    
+        <td align='left' width='15%'> Status </td>
+        <td align='left' width='15%'> Action </td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> Initialize DApp (Custom) </strong></font></td>    
+        <td align='left' width='15%'><font color=green><strong> app/config </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick="popUp('http://localhost:6553/init','Initialize Adam BC');"><font color=red><strong> Change </strong></font></a></td>
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> Edit Environment Variables </strong></font></td>    
+        <td align='left' width='15%'><font color=green><strong> .env </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick="popUp('http://localhost:6553/environment','Edit Environment Variables');"><font color=red><strong> Change </strong></font></a></td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' width='70%'> Peer Settings </td>    
+        <td align='left' width='15%'> Status </td>
+        <td align='left' width='15%'> Action </td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> Turn On Peer Mode </strong></font></td>    
+        <td align='left' width='15%'><font color=green><strong> NO / YES </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick="popUp('http://localhost:6553/environment','Edit Environment Variables');"><font color=red><strong> Change </strong></font></a></td>
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> Initialize DApp (Peer) </strong></font></td>    
+        <td align='left' width='15%'><font color=green><strong> app/config </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick="popUp('http://localhost:6553/peer/init','Initialize Adam BC');"><font color=red><strong> Change </strong></font></a></td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' width='70%'> Network Settings </td>    
+        <td align='left' width='15%'> Status </td>
+        <td align='left' width='15%'> Action </td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> Turn On Global Network </strong></font></td>    
+        <td align='left' width='15%'><font color=green><strong> ON / OFF </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick="popUp('http://localhost:6553/environment','Edit Environment Variables');"><font color=red><strong> Change </strong></font></a></td>
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> Reset to Factory </strong></font></td>    
+        <td align='left' width='15%'><font color=green><strong> NO / YES </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick=""><font color=grey><strong> Change </strong></font></a></td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=black><strong> Global Network Identity (GNI) </strong></font></td>    
+        <td align='left' width='15%'><font color=black><strong> Status </strong></font></td>
+        <td align='left' width='15%'><font color=black><strong> Action </strong></font></td>
+        </tr>
+        <tr>
+        <td align='left' width='70%'><font color=green><strong> GNI Username </strong></font></td>    
+        <td align='left' width='15%'> E.g, <font color=green><strong> @AdamBC </strong></font></td>
+        <td align='left' width='15%'><a href="" id="url" style="text-decoration: none;" onclick="popUp('http://localhost:6553/environment','Edit Environment Variables');"><font color=red><strong> Change </strong></font></a></td>
+        </tr>
+      </table>
+      
+    </div>
+  </br>
+  <center><font size=2 color=black>&copy;2019 - <script type="text/javascript"> document.write(new Date().getFullYear()); </script>, The Adam Blockchain Computer </font></center>
+  </br>
+  </div>
+  <script type="text/javascript">
+
+    function popUp(url, name){
+    
+      var left = (screen.width-600)/2;
+      var top = (screen.height-400)/4;
+      
+      // Launch Start URL
+      (function(){
+        window.open(url, name, 'directories=no, status=no, scrollbars=no, resizable=no, copyhistory=no, menubar=no,width=600,height=400,toolbar=no,location=no,left='+left+',top='+top);
+      }());
+    
+    }
+    
+  </script>
+
+</body>
+</html>
+

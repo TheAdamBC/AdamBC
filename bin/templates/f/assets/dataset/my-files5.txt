@@ -1,0 +1,2 @@
+It has its own set of libraries meant for handling OS and filesystem tasks and like opening and 
+reading files. 

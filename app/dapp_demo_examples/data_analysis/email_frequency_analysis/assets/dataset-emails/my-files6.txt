@@ -1,0 +1,2 @@
+In this article I will show you how to use Node.js to read files. 
+Specifically we will be using the fs module to do just that.

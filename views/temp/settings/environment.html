@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/assets/img/icon.png"/><!-- Link to title icon logo--> 
+  <title>Adam BC</title>
+  <style>
+
+    html { margin-top: 15px; }
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages > li { padding: 0.5rem 1rem; }
+    #messages > li:nth-child(odd) { background: #efefef; }
+
+    .select {
+    position: absolute;
+    z-index: 10;
+    width: 168px;
+    height: 34px;
+    border: 1px solid #000;
+    }
+
+  </style>
+  <link rel="stylesheet" href="/assets/css/semantic.min.css">
+</head>
+<body bgcolor="white">
+  <div class="ui container">
+    <center> Change Settings -  Edit Environment Settings </center>
+    <div  class="ui segment" style="min-height: 400px; overflow-y: auto;">
+
+      <table width='100%' height='100%' border='0'>
+        <tr>
+        <td align='left' width='30%'> Environment Settings </td>    
+        <td align='center' width='40%'> Action </td>
+        <td align='right' width='30%'> .ENV </td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3"> </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' colspan="3">  </td> 
+        </tr>
+        <form action="/environment" method="POST">
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> Peer Mode (ON / OFF) </strong></font></td>    
+        <td align='right' width='60%' colspan="2">
+          <select name="peer_mode" id="peer_mode">
+          <option value=""> Turn On Peer Mode &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </option>
+          <option value="NO"> OFF </option>
+          <option value="YES"> ON </option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> Global Network (ON / OFF) </strong></font></td>    
+        <td align='right' width='60%' colspan="2">
+          <select name="network" id="network">
+          <option value=""> Turn On Global Network Mode </option>
+          <option value="OFF"> OFF </option>
+          <option value="ON"> ON </option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3"> </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> Network Username </strong></font></td>    
+        <td align='right' width='60%' colspan="2"><input id="username" name="username" placeholder="E.g, @AdamBC" type="text" size="35" maxlength="40" value=""></td>
+        </tr>
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> My Contact (Email or Phone) </strong></font></td>    
+        <td align='right' width='60%' colspan="2"><input id="contact" name="contact" placeholder="E.g, MyEmail@Email.com" type="text" size="35" maxlength="40" value=""></td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3"> </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> Worker ID (UUID FORMAT) </strong></font></td>    
+        <td align='right' width='60%' colspan="2"><input id="worker_id" name="worker_id" placeholder="UUID Number" type="text" size="35" maxlength="40" value=""></td>
+        </tr>
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> Security ID (UUID FORMAT) </strong></font></td>    
+        <td align='right' width='60%' colspan="2"><input id="crypto_id" name="crypto_id" placeholder="UUID Number" type="text" size="35" maxlength="40" value=""></td>
+        </tr>
+        <tr>
+        <td align='left' width='40%'><font color=green><strong> Work ID (UUID FORMAT) </strong></font></td>    
+        <td align='right' width='60%' colspan="2"><input id="work_id" name="work_id" placeholder="UUID Number" type="text" size="35" maxlength="40" value=""></td>
+        </tr>
+        <tr>
+        <td align='left' colspan="3"> </br> </td> 
+        </tr>
+        <tr>
+        <td align='left' width='30%'> </td>    
+        <td align='left' width='40%'> <input id="submit" type="submit" value="Save Changes"> </td>
+        <td align='right' width='30%'> </td>
+        </tr>
+        </form>
+      </table>
+      
+    </div>
+  </div>
+  <script type="text/javascript">
+
+    function popUp(url, name){
+    
+      var left = (screen.width-600)/2;
+      var top = (screen.height-400)/4;
+      
+      // Launch Start URL
+      (function(){
+        window.open(url, name, 'directories=no, status=no, scrollbars=no, resizable=no, copyhistory=no, menubar=no,width=600,height=400,toolbar=no,location=no,left='+left+',top='+top);
+      }());
+    
+    }
+    
+    </script>
+</body>
+</html>
+

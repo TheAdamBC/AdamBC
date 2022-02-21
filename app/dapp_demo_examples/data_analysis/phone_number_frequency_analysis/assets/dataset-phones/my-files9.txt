@@ -1,0 +1,4 @@
+Although as you will come to realize in the next section and it is not 
+necessarily the best or most efficient.
+All Node streams are instances of the EventEmitter object and allowing you to subscribe to 
+important events.

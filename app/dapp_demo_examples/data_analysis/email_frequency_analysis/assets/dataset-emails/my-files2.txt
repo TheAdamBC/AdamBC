@@ -1,0 +1,12 @@
+With most languages, this is pretty simple, but for JavaScript veterans it might seem a bit 
+weird. Email to: vakindu@gmail.com
+For so many years JavaScript was only available in the browser and so front-end developers may 
+only be familiar with the FileReader API or similar. Email to: pvakindu@gmail.com
+Node.js and you probably know this is much different than your typical JavaScript in the browser. 
+It has its own set of libraries meant for handling OS and filesystem tasks and like opening and 
+reading files. In this article I will show you how to use Node.js to read files. 
+Specifically we will be using the fs module to do just that. Email to: vakindu@gmail.com
+Buffering Contents with fs.readFile.
+This is the most common way to read a file with Node.js and especially for beginners and due to its 
+simplicity and convenience. Although as you will come to realize in the next section and it is not 
+necessarily the best or most efficient. Email to: vakinduphilliam@gmail.com

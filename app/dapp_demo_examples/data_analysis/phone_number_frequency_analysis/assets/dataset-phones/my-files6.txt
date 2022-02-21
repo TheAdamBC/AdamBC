@@ -1,0 +1,8 @@
+Specifically we will be using the fs module to do just that. Call: 256785571876
+Buffering Contents with fs.readFile. Call: 256711083080
+This is the most common way to read a file with Node.js and especially for beginners and due to its 
+simplicity and convenience. Although as you will come to realize in the next section and it is not 
+necessarily the best or most efficient. Call: 256786814934
+Streaming Contents with fs.createReadStream. Email to: vakindu@gmail.com
+The second way to open and read a file is to open it as a Stream using the fs.createReadStream 
+method. Call: 256785571876
