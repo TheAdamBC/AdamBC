@@ -224,7 +224,14 @@ app.get('/peers/join', (req, res) => {
 
     // Create new peer
     var newPeer = {
-        hostIP:hostIP
+        hostIP:hostIP,
+        location:"Earth",
+        username:process.env.NETWORK_USERNAME,
+        peer_id:process.env.WORKER_ID,
+        peer_pwd:process.env.CRYPTO_ID,
+        contact: process.env.WORKER_CONTACT,
+        joined: new Date(),
+        verified:false
     };
 
     // Read peer configurations from file
@@ -235,10 +242,10 @@ app.get('/peers/join', (req, res) => {
 
         // Check if peer is full
         // Not 500 or more
-        if(str.peers.length<500){
+        if(str[0].peers.length<500){
 
             // Store new peer
-            str.peers.push(newPeer);
+            str[0].peers.push(newPeer);
 
             // Store results into file
             fs.writeFile(__dirname + '/peers/config/' + 'store.json', JSON.stringify(str), (err) => {
@@ -269,7 +276,14 @@ app.get('/peers/join/admin', (req, res) => {
 
     // Create new peer
     var newPeer = {
-        hostIP:hostIP  
+        hostIP:hostIP,
+        location:"Earth",
+        username:process.env.NETWORK_USERNAME,
+        peer_id:process.env.WORKER_ID,
+        peer_pwd:process.env.CRYPTO_ID,
+        contact: process.env.WORKER_CONTACT,
+        joined: new Date(),
+        verified:false
     };
 
     // Read peer configurations from file
@@ -280,10 +294,10 @@ app.get('/peers/join/admin', (req, res) => {
     
         // Check if admin is full
         // Not 10 or more
-        if(str.admin.length<10){
+        if(str[0].admin.length<10){
             
             // Store new peer
-            str.admin.push(newPeer);
+            str[0].admin.push(newPeer);
 
             // Store results into file
             fs.writeFile(__dirname + '/peers/config/' + 'store.json', JSON.stringify(str), (err) => {
@@ -471,40 +485,6 @@ app.get('/environment', (req, res) => {
 
 // Adam BC scan, find and join peer networks (GET)
 app.get('/networks', (req, res) => {
-
-    // Register events on socket connection
-    require('./app').io.on('connection', function(socket){ 
-
-        // Listen to newPeer event sent by client and emit a newPeer to the client with new list of online peers
-        socket.on('newPeer', function(user){
-            var newPeer = {id: socket.id, name: user};
-            function isOnline(peer){
-                let detector=false;
-                onlinePeers.forEach(function(peerOnline, index){
-                    if(peerOnline.name === peer.name) {
-                        detector=true;
-                    }
-                });
-                return detector;
-            }
-            if(isOnline(newPeer)==false){
-                require('./app').io.to(socket.id).emit('newPeer', newPeer);
-                
-                require('./app').io.emit('onlinePeers', onlinePeers);
-            }
-        });
-
-        // Listen to disconnect event sent by client and emit peerIsDisconnected and onlinePeers (with new list of online peers) to the client 
-        socket.on('disconnect', function(){
-            onlinePeers.forEach(function(user, index){
-                if(user.id === socket.id) {
-                    onlinePeers.splice(index, 1);
-                    require('./app').io.emit('onlinePeers', onlinePeers);
-                }
-            });
-        });
-    });
-
     res.sendFile(path.join(__dirname + '/views/temp/settings/peers.html'));
 });
 

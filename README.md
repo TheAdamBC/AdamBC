@@ -1701,6 +1701,11 @@ _(DTU means code contributed to the platform's DApp Architecture, Testing Framew
 
 - Allow peer admins to create their own custom terms of use that each peer must accent to before joining.
 
+<br/>
+
+> DTU 130: Synchronize countdown clocks across all peer members (SENIOR LEVEL).
+
+- Synchronize the countdown clocks so that they are uniform across all peer computing members taking part in the computation.
 
 <br/>
 
@@ -1736,7 +1741,7 @@ Each of the computers in the peer network should fetch and read the 'task.json' 
 
 As mentioned earlier, Liz has also built the project's skeleton app that works well on a single computer. Your job is to modify this skeleton app so that the computation can work on multiple computers through a Peer-to-peer computing network. 
 
-App's Skeleton: http://Github.com/TheAdamBC/Community/Developer_Challenge/P2P
+App's Skeleton: https://github.com/TheAdamBC/Community/tree/main/developer_challenge/p2p
 
 REQUIREMENTS:
 
@@ -1746,7 +1751,7 @@ REQUIREMENTS:
 
 HOW IT SHOULD WORK:
 
-- Take a look at the app's skeleton: http://Github.com/TheAdamBC/Community/Developer_Challenge/P2P
+- Take a look at the app's skeleton: https://github.com/TheAdamBC/Community/tree/main/developer_challenge/p2p
 
 - The app's design MUST be decentralized in a peer to peer computing network. The 10 individuals should each download the application via a Github repository, install dependencies (npm install), then connect to Liz's computer via a network (internet, LAN or broadband wireless network - depending on your preference), and start the computation.
 
@@ -1757,6 +1762,8 @@ BONUS POINTS:
 - It's up to you the developer to determine the best NPM modules to deploy for the project and the most ideal decentralized architecture or network protocol to use for resource distribution during the task's computation. We are particularly interested in knowing what NPM module(s) you will use to implement the peer-to-peer architecture. A custom implementation is also fine.
 
 - You could also deploy a Queuing system to make the computation more efficient.
+
+- You can add a simple peer network discovery feature for new peer members to scan, find and join the peer computing network.
 
 HINT:
 

@@ -25,31 +25,60 @@
   <link rel="stylesheet" href="/assets/css/semantic.min.css">
   <script src="/assets/js/jquery.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/assets/js/peers.js"></script>
 </head>
 <body bgcolor="white">
   <div class="ui container">
     <center> Peer Computing Networks Near You </center>
-    <div  class="ui segment" style="min-height: 400px; overflow-y: auto;">
-      <ul id="onlinePeers"><center>No active Peer computing Networks</center></ul>
-    </div>
+    <hr>
+    <table width='100%' align='center' border='0' cellpadding='1px' cellspacing='1px'>
+      <tr>
+          <th width='20%'>Peer Network</th>
+          <th width='20%'>RAM Power</th>
+          <th width='20%'>Members</th>
+          <th width='20%'>Status</th>
+          <th width='20%'>Action</th>
+      </tr>
+    </table>
+    <table id='table' width='100%' align='center' border='0' cellpadding='5px' cellspacing='1px'>
+    </table>
     <br/>
   </div>
-  <script type="text/javascript">
+  <script>
 
-    function popUp(url, name){
-    
-      var left = (screen.width-600)/2;
-      var top = (screen.height-400)/4;
-      
-      // Launch Start URL
-      (function(){
-        window.open(url, name, 'directories=no, status=no, scrollbars=no, resizable=no, copyhistory=no, menubar=no,width=600,height=400,toolbar=no,location=no,left='+left+',top='+top);
-      }());
-    
-    }
-    
-    </script>
+    $(document).ready(()=>{
+     
+     $.getJSON('http://localhost:6553/peers')
+     
+     .done((data)=>{
+            var rows = '';
+            $.each(data, function (key, value) {
+                rows += `
+                <tr bgColor='#e2dfdf' align='center'>
+                <td width='20%'> ${data[key].admin[0].username} </td>
+                <td width='20%'> ${Object.keys(data[key].peers).length * 100} MBs </td>
+                <td width='20%'> ${Object.keys(data[key].peers).length} </td>
+                <td width='20%'><font color='red'> active </font></td>
+                <td width='20%'><a href="" id="url" style="text-decoration: none;"><font color='green'><strong> join  </strong></font></a></td>
+                </tr>
+                `;
+            });  
+            if(rows==''){
+               rows += `
+               <tr>
+                   <td colspan='5'> No computing networks are currently active. </td>
+               </tr>
+               `;
+            }
+            $('#table').append(rows);
+     })
+
+     .fail(()=>{
+         document.write("Adam BC did not detect a network.");
+     });
+
+    });
+
+</script>
 </body>
 </html>
 
