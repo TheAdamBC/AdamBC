@@ -63,7 +63,7 @@ _Adam create AppName_
 
 </br>
 
-The above command will by default create an Adam BC 'fs' DApp, a 'filesytem' heavy application.
+The above command will by default create an Adam BC 'fs' DApp, a 'filesystem' heavy application.
 
 Currently Adam BC can build 3 types of DApps; 
 
@@ -75,7 +75,9 @@ Currently Adam BC can build 3 types of DApps;
 
 </br>
 
-To create a 'numerics' or 'multimedia' heavy DApp, run their corresponding commands below.
+To create a 'numerics' heavy DApp use the 'n' option keyword, to create a 'multimedia' heavy DApp use the 'm' option keyword, to create a 'filesystem' heavy DApp use the 'f' option keyword. 
+
+The corresponding commands look like below.
 
 _Adam create -n AppName_
 
@@ -86,6 +88,8 @@ _Adam create -f AppName_
 </br>
 
 Adam BC also has an additional custom command for creating a PDF heavy DApp.
+
+To create a 'PDF' heavy DApp use the 'p' option keyword.
 
 _Adam create -p AppName_
 

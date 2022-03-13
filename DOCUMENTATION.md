@@ -206,9 +206,11 @@ Open the folder 'app/dapps/AppName' to find your newly created DApp's files. All
 
 The command auto creates the DApp 'AppName' inside the 'app/dapps' folder with all its necessary files like 'DApp.js' inside, including the 'config' folder with all its neccessary files.
 
-By default Adam BC creates an 'fs' DApp, a 'filesytem' heavy app.
+By default Adam BC creates an 'fs' DApp, a 'filesystem' heavy app.
 
-To create a 'numerics' or 'multimedia' DApp, run the corresponding commands below.
+To create a 'numerics' heavy DApp use the 'n' option keyword, to create a 'multimedia' heavy DApp use the 'm' option keyword, to create a 'filesystem' heavy DApp use the 'f' option keyword. 
+
+The corresponding commands look like below.
 
 <br/>
 
@@ -232,7 +234,7 @@ Additional custom CLI Commands:
 
 <br/>
 
-To create a 'PDF heavy' filesystem DApp, use the command below.
+To create a 'PDF' heavy DApp, use the 'p' option keyword in your command, like below.
 
 <br/>
 
