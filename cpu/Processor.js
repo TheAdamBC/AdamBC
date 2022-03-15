@@ -13,7 +13,7 @@ require("dotenv").config(); // Environment event handler
 
 // Find DApp Route
 const { resolve } = require('path');
-const processorRoute = resolve('./app/DApp.js');
+const processorRoute = resolve('./cpu/DApp.js');
 
 // Get Decentralized App (DApp)
 const getProcessor = fork(processorRoute);
