@@ -39,7 +39,7 @@ async function createDApp(dapp,options) {
     let start = chalk.cyan.bold(`Creating an Adam BC 'Numerics' DApp ...!`);
     console.log(start);
 
-    const src = resolve('./bin/templates/n');
+    const src = resolve('./bin/templates/js/n');
     const dist = resolve(`./app/dapps/${dapp}`);
 
     copyRecursiveSync(src,dist);
@@ -48,7 +48,7 @@ async function createDApp(dapp,options) {
     let start = chalk.cyan.bold(`Creating an Adam BC 'Multimedia' DApp ...!`);
     console.log(start);
 
-    const src = resolve('./bin/templates/m');
+    const src = resolve('./bin/templates/js/m');
     const dist = resolve(`./app/dapps/${dapp}`);
 
     copyRecursiveSync(src,dist);
@@ -57,7 +57,7 @@ async function createDApp(dapp,options) {
     let start = chalk.cyan.bold(`Creating an Adam BC 'PDF' DApp ...!`);
     console.log(start);
 
-    const src = resolve('./bin/templates/p');
+    const src = resolve('./bin/templates/js/p');
     const dist = resolve(`./app/dapps/${dapp}`);
 
     copyRecursiveSync(src,dist);
@@ -66,7 +66,7 @@ async function createDApp(dapp,options) {
     let start = chalk.cyan.bold(`Creating an Adam BC 'FS' DApp ...!`);
     console.log(start);
 
-    const src = resolve('./bin/templates/f');
+    const src = resolve('./bin/templates/js/f');
     const dist = resolve(`./app/dapps/${dapp}`);
 
     copyRecursiveSync(src,dist);
