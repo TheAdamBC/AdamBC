@@ -304,7 +304,9 @@ The 'config.json' file looks like below.
 
     "TimeStarted":"",
 
-    "type":"fs"
+    "type":"fs",
+
+    "lang":"js"
 
 }
 
@@ -437,6 +439,17 @@ The 'config.json' file looks like below.
 - numbers: indicates that this is an arithmetics-heavy app.
 - fs: indicates that this is a file-heavy data app. 
 - multimedia: indicates that this is an image or video rich app.
+
+<br/>
+
+> lang (Type: String):
+
+- This indicates the programming language used to built the DApp.
+
+- Adam BC currently supports only 2 languages: javascript and python.
+
+- js: indicates that this is a JavaScript DApp.
+- py: indicates that this is a Python DApp. 
 
 <br/>
 
@@ -707,6 +720,8 @@ The file looks like this while in transition;
     "tDuration":60,
 
     "type":"fs",
+
+    "lang":"js",
 
     "uParams":[{
 
@@ -1732,6 +1747,14 @@ EXAMPLE CRITERIA:
 - Allow developers to build DApps in other programming languages like Python***, PHP, Scala, Java, TypeScript, GoLang etc.
 
 - Put Priority on Python for its importance in Data Science, Machine Learning and AI.
+
+ _Adam create -n --py AppName_
+
+ _Adam create -m --py AppName_
+
+ _Adam create -f --py AppName_
+
+ _Adam create -p --py AppName_
 
 
 <br/>

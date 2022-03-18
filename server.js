@@ -394,6 +394,7 @@ app.get("/init_c", (req, res) => {
                 tDuration: cfs.tDuration, // Duration
                 TimeStarted: new Date(), // Time task started 
                 type:cfs.type, // App type
+                lang:cfs.lang, // Language type
                 uParams: cfs.uParams // Duration
             }
 
@@ -456,6 +457,7 @@ app.get("/peer/init_p", (req, res) => {
                 tDuration: cfs.tDuration, // Duration
                 TimeStarted: new Date(), // Time task started 
                 type: cfs.type, // App type
+                lang: cfs.lang, // Language type
                 uParams: cfs.uParams // Duration
             }
 
@@ -656,6 +658,7 @@ function cWorker (){
         running: json["configs"].running, // Is task actively running 
         tDuration: json["logs"].tDuration, // Duration
         type: json["logs"].type, // App type
+        lang: json["logs"].lang, // Language type
         uParams: [] // Developer defined parameters
     }
 
@@ -683,6 +686,7 @@ function cWorker (){
                 tDuration: cfs.tDuration, // Duration
                 TimeStarted: new Date(), // Time task started 
                 type:cfs.type, // App type
+                lang:cfs.lang, // Language type
                 uParams: [] // Developer defined parameters
             }
 
@@ -712,6 +716,7 @@ function cWorker (){
                 tDuration: csn.tDuration, // Duration
                 TimeStarted: csn.TimeStarted, // Time task started 
                 type:csn.type, // App type
+                lang:csn.lang, // Language type
                 uParams: [] // Developer defined parameters
             }
 
@@ -799,6 +804,7 @@ function pWorker (){
         running: json["configs"].running, // Is task actively running 
         tDuration: json["logs"].tDuration, // Duration
         type: json["logs"].type, // App type
+        lang: json["logs"].lang, // Language type
         uParams: [] // Developer defined parameters
     }
 
@@ -826,6 +832,7 @@ function pWorker (){
                 tDuration: cfs.tDuration, // Duration
                 TimeStarted: new Date(), // Time task started 
                 type:cfs.type, // App type
+                lang:cfs.lang, // Language type
                 uParams: [] // Developer defined parameters
             }
 
@@ -855,6 +862,7 @@ function pWorker (){
                 tDuration: csn.tDuration, // Duration
                 TimeStarted: csn.TimeStarted, // Time task started 
                 type:csn.type, // App type
+                lang:csn.lang, // Language type
                 uParams: [] // Developer defined parameters
             }
 

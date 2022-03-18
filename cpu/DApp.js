@@ -56,6 +56,7 @@ process.on('message', async (params) => {
             Timestamp: new Date(), // Timestamp for latest iteration
             tDuration: params.tDuration, // Duration
             type: params.type, // App type
+            lang: params.lang, // Language type
             uParams: newUparams // Custom Developer defined Parameters
         }
     }; 
