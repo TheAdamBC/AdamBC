@@ -9,7 +9,14 @@ const {DApp} = require('../app/App'); // Import App
 process.on('message', async (params) => {
 
     // Execute DApp parameters
-    const app = await DApp(params);
+    var app ='';
+    if(params.lang=='py'){
+    //const app = await DApp(params);
+    app = {py:'Hello Python'};
+    }
+    else {
+    app = await DApp(params);
+    }
 
     // Generate new custom parameters
     var newUparams={};

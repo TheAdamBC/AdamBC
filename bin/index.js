@@ -24,6 +24,7 @@ program
 .option("-n, --numbers", "Indicates that this is an arithmetics-heavy app.", {demandOption:false})
 .option("-m, --multimedia", "Indicates that this is an image or video rich app.", {demandOption:false})
 .option("-p, --pdf", "Indicates that this is a PDF heavy app.", {demandOption:false})
+.option("-py, --py", "Indicates that you are building a python app.", {demandOption:false})
 .action(createDApp)
 
 program
@@ -34,6 +35,50 @@ program
 async function createDApp(dapp,options) {
 
   const problem = chalk.red.bold(`Problem creating Adam BC DApp '${dapp}' ...!`);
+  
+  if (options.py) {
+
+  if (options.numbers) {
+    let start = chalk.cyan.bold(`Creating an Adam BC 'PDF' DApp ...!`);
+    console.log(start);
+
+    const src = resolve('./bin/templates/py/n');
+    const dist = resolve(`./app/dapps/${dapp}`);
+
+    copyRecursiveSync(src,dist);
+  }
+  else if (options.multimedia) {
+    let start = chalk.cyan.bold(`Creating an Adam BC 'Multimedia' DApp ...!`);
+    console.log(start);
+
+    const src = resolve('./bin/templates/py/m');
+    const dist = resolve(`./app/dapps/${dapp}`);
+
+    copyRecursiveSync(src,dist);
+  }
+  else if (options.pdf) {
+    let start = chalk.cyan.bold(`Creating an Adam BC 'PDF' DApp ...!`);
+    console.log(start);
+
+    const src = resolve('./bin/templates/py/p');
+    const dist = resolve(`./app/dapps/${dapp}`);
+
+    copyRecursiveSync(src,dist);
+  }
+  else {
+    let start = chalk.cyan.bold(`Creating an Adam BC 'FS' DApp ...!`);
+    console.log(start);
+
+    const src = resolve('./bin/templates/py/f');
+    const dist = resolve(`./app/dapps/${dapp}`);
+
+    copyRecursiveSync(src,dist);
+  
+  }
+
+  }
+
+  else {
 
   if (options.numbers) {
     let start = chalk.cyan.bold(`Creating an Adam BC 'Numerics' DApp ...!`);
@@ -71,6 +116,8 @@ async function createDApp(dapp,options) {
 
     copyRecursiveSync(src,dist);
   
+  }
+
   }
 
   const starting = chalk.green.bold(`Creating Adam BC DApp '${dapp}' ...!`);
