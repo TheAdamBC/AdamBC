@@ -3,6 +3,9 @@
 require("dotenv").config(); 
 const {encryptPWD} = require('../helpers/encrypt'); // Password encryption
 const {DApp} = require('../app/App'); // Import App
+const spawn = require("child_process").spawn;
+const { resolve } = require('path');
+const processorRoute = resolve('./app/App.py'); // Locate python app
 
 // Listened to message from CPU:
 // Captured Parameters passed from Central Processing Unit (CPU)
@@ -11,8 +14,24 @@ process.on('message', async (params) => {
     // Execute DApp parameters
     var app ='';
     if(params.lang=='py'){
-    //const app = await DApp(params);
-    app = {py:'Hello Python'};
+    app = await pyDApp();
+    async function pyDApp (){
+        // Launch python app
+        const pythonProcess = spawn('py',[`${processorRoute}`, JSON.stringify(params)]);
+        
+        return new Promise((resolve,reject)=>{
+            // Receive messages from python app
+            pythonProcess.stdout.on("data", (data) =>{
+                // Convert Python Dictionary/JSON to JavaScript Object
+                resolve(data.toString());
+            });
+              
+            // Read errors from python app
+            pythonProcess.stderr.on("data", (data) =>{
+                reject(data.toString());
+            });
+        });
+    }
     }
     else {
     app = await DApp(params);

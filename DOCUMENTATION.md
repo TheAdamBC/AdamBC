@@ -240,8 +240,23 @@ To create a 'PDF' heavy DApp, use the 'p' option keyword in your command, like b
 
 _Adam create -p AppName_
 
-
 <br/>
+
+Adam BC also supports DApp development using the python programming language.
+
+To create an Adam BC DApp in Python, use the corresponding commands below.
+
+</br>
+
+_Adam create -n --py AppName_
+
+_Adam create -m --py AppName_
+
+_Adam create -f --py AppName_
+
+_Adam create -p --py AppName_
+
+</br>
 
 ## Building an Adam BC DApp involves 3 steps:
 
@@ -446,10 +461,11 @@ The 'config.json' file looks like below.
 
 - This indicates the programming language used to built the DApp.
 
-- Adam BC currently supports only 2 languages: javascript and python.
+- Adam BC currently supports 3 languages: javascript, typescript and python.
 
 - js: indicates that this is a JavaScript DApp.
 - py: indicates that this is a Python DApp. 
+- ts: indicates that this is a TypeScript DApp. 
 
 <br/>
 
@@ -483,7 +499,7 @@ The parameter function below shows how to pass a group of arithmetic variables t
 
 <br/>
 
-See full example code under the folder 'app/dapp_demo_examples/data-analysis'.
+See full example code under the folder 'app/dapp_demo_examples/js/data-analysis'.
 
 ``` javaScript
 
@@ -545,7 +561,7 @@ In this case we read data from a file and set it as our new dataset to send to c
 
 <br/>
 
-See full example code under the folder 'app/dapp_demo_examples/data-analysis'.
+See full example code under the folder 'app/dapp_demo_examples/js/data-analysis'.
 
 ``` javaScript
 
@@ -616,7 +632,7 @@ The data files are labeled `my-files1.txt, my-files2.txt, my-files3.txt, my-file
 
 <br/>
 
-See full example code under the folder 'app/dapp_demo_examples/data-analysis'.
+See full example code under the folder 'app/dapp_demo_examples/js/data-analysis'.
 
 ``` javaScript
 
@@ -1748,13 +1764,13 @@ EXAMPLE CRITERIA:
 
 - Put Priority on Python for its importance in Data Science, Machine Learning and AI.
 
- _Adam create -n --py AppName_
+ _Adam create -n --ts AppName_
 
- _Adam create -m --py AppName_
+ _Adam create -m --ts AppName_
 
- _Adam create -f --py AppName_
+ _Adam create -f --ts AppName_
 
- _Adam create -p --py AppName_
+ _Adam create -p --ts AppName_
 
 
 <br/>

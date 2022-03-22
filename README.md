@@ -87,11 +87,25 @@ _Adam create -f AppName_
 
 </br>
 
-Adam BC also has an additional custom command for creating a PDF heavy DApp.
+Adam BC has an additional custom command for creating a PDF heavy DApp.
 
 To create a 'PDF' heavy DApp use the 'p' option keyword.
 
 _Adam create -p AppName_
+
+</br>
+
+Adam BC also supports DApp development using the python programming language.
+
+To create an Adam BC DApp in Python, use the corresponding commands below.
+
+_Adam create -n --py AppName_
+
+_Adam create -m --py AppName_
+
+_Adam create -f --py AppName_
+
+_Adam create -p --py AppName_
 
 </br>
 

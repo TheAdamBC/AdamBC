@@ -1,0 +1,2 @@
+With most languages, this is pretty simple, but for JavaScript veterans it might seem a bit 
+weird. 

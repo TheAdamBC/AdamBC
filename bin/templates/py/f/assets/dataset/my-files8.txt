@@ -1,0 +1,2 @@
+This is the most common way to read a file with Node.js and especially for beginners and due to its 
+simplicity and convenience.

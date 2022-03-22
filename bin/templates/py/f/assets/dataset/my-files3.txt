@@ -1,0 +1,2 @@
+For so many years JavaScript was only available in the browser and so front-end developers may 
+only be familiar with the FileReader API or similar.
