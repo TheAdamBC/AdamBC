@@ -170,7 +170,11 @@
           $.each(items, (key, val) =>{
       
               labels.push(items[key].logs.tPartition); // tPartition transitions
-              data.push(Object.keys(items[key].results).length); // Results found
+              if (Object.keys(items[key].results).length==1 && typeof Object.values(items[key].results)[0]=='number') {
+                data.push(Object.values(items[key].results)[0]); // Results found
+              } else {
+                data.push(Object.keys(items[key].results).length); // Results found
+              }
       
           });
       
