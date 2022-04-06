@@ -1,7 +1,7 @@
 
 # Adam BC DApp Demo Example - Image Color Occurrence Analysis
 
-This demo example shows how to build a DApp that can analyse and rank color occurrences in images contained inside a given image directory.
+This demo example shows how to build a DApp that can count the number of unique colors inside an image.
 
 ## How to run the DApp
 

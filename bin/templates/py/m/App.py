@@ -23,26 +23,36 @@ params = json.loads(sys.argv[1]) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Image Color occurrence Analysis.
-# This DApp example shows how to analyse and rank color occurrences in images in a given file directory.
+# Counting the number of unique colors inside an image.
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
-
+from PIL import Image
+import numpy as np
 import cv2
+import os
+
+# Variable to store color count
+colorCount = {'colorCount':0}
 
 fileName = params['uParams'][0]['parameter2'] # Capture name of file
+fileData = params['uParams'][0]['parameter1'] # Capture file
 
-with open('assets/media/{fileName}',"wb") as f: # Save file to local directory
-    f.write(params['uParams'][0]['parameter1'])
+# Convert Image to Numpy array
+#im = np.array(fileData)
 
-img = cv2.imread('assets/colorphotos/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
+# Save file to local directory
+#cv2.imwrite(os.path.join('assets/media/', f'{fileName}'), im)
+#cv2.waitKey(0)
 
-# get dimensions of image
-dimensions = img.shape
- 
-# height, width, number of channels in image
-height = img.shape[0]
-width = img.shape[1]
-channels = img.shape[2]
+# Load image and convert to HSV
+img = Image.open(f'assets/media/{fileName}')
+
+unique_colors = {img.getpixel((x,y)) for x in range(img.size[0]) for y in range(img.size[1])}
+
+# Now print percentage of green pixels
+colorCount['colorCount']=(len(unique_colors))
+
+# Return results of processing
+results=colorCount
 
 #*********************************************************************************/
 #                 /* STOP WRITING YOUR DAPP CODE UP UNTIL HERE.*/
