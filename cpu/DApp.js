@@ -17,7 +17,10 @@ process.on('message', async (params) => {
     app = await pyDApp();
     async function pyDApp (){
         // Launch python app
-        const pythonProcess = spawn('py',[`${processorRoute}`, JSON.stringify(params)]);
+        const pythonProcess = spawn('py',[`${processorRoute}`]);
+
+        // Pass data to app
+        pythonProcess.stdin.write(JSON.stringify(params) + '\n');
         
         return new Promise((resolve,reject)=>{
             // Receive messages from python app

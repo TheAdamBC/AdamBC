@@ -40,7 +40,7 @@ function readDataset() {
     try { 
 
         // Fetch dataset using new 'currentPage' number
-        return fs.readFileSync(datasetRoute,  'binary');
+        return fs.readFileSync(datasetRoute,  'base64');
     }
 
     catch (err) { 

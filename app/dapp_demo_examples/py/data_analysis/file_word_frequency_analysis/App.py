@@ -16,7 +16,9 @@ import sys, json
 
 results = {} # Storage for successful results.
 
-params = json.loads(sys.argv[1]) # Load parameters values (params) to process
+json_str = input() # Capture data input
+
+params = json.loads(json_str) # Load parameters values (params) to process
 
 #*********************************************************************************/
 #                 /* START WRITING YOUR DAPP CODE BEGINNING HERE: */
