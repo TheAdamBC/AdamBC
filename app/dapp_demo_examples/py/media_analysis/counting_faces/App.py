@@ -25,16 +25,15 @@ params = json.loads(json_str) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Counting the number of unique colors inside an image.
+# Estimate the number of people in a photo.
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
-from PIL import Image
 import numpy as np
 import cv2
 import os
 import base64
 
-# Variable to store color count
-colorCount = {'colorCount':0}
+# Variable to store number of people in photo
+numberOfPeople = {'numberOfPeople':0}
 
 fileName = params['uParams'][0]['parameter2'] # Capture name of file
 fileData = base64.b64decode(params['uParams'][0]['parameter1']) # Capture file
@@ -50,19 +49,22 @@ try:
 except:
     print('Problem saving file!')
 
-# Load image and convert to HSV
 try:
-    img = Image.open(f'assets/media/{fileName}')
+    img = cv2.imread(f'assets/media/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
 except:
     print('Error processing file!')
 
-unique_colors = {img.getpixel((x,y)) for x in range(img.size[0]) for y in range(img.size[1])}
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# Now print percentage of green pixels
-colorCount['colorCount']=(len(unique_colors))
+path = 'cascades/haarcascade_frontalface_default.xml'
+face_detector = cv2.CascadeClassifier(path)
+
+face_rects = face_detector.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30), flags = cv2.CASCADE_SCALE_IMAGE)
+
+numberOfPeople['numberOfPeople'] = len(face_rects)
 
 # Return results of processing
-results=colorCount
+results=numberOfPeople
 
 #*********************************************************************************/
 #                 /* STOP WRITING YOUR DAPP CODE UP UNTIL HERE.*/

@@ -25,16 +25,15 @@ params = json.loads(json_str) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Counting the number of unique colors inside an image.
+# Estimating the quality of images in a file directory (We'll consider image quality as calculating the area of an image divided by its size).
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
-from PIL import Image
 import numpy as np
 import cv2
 import os
 import base64
 
-# Variable to store color count
-colorCount = {'colorCount':0}
+# Variable to store image quality
+imageQuality = {'imageQuality':0}
 
 fileName = params['uParams'][0]['parameter2'] # Capture name of file
 fileData = base64.b64decode(params['uParams'][0]['parameter1']) # Capture file
@@ -50,19 +49,24 @@ try:
 except:
     print('Problem saving file!')
 
-# Load image and convert to HSV
 try:
-    img = Image.open(f'assets/media/{fileName}')
+    img = cv2.imread(f'assets/media/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
 except:
     print('Error processing file!')
 
-unique_colors = {img.getpixel((x,y)) for x in range(img.size[0]) for y in range(img.size[1])}
+# get dimensions of image
+dimensions = img.shape
+ 
+# height, width, number of channels in image
+height = img.shape[0]
+width = img.shape[1]
+size = os.path.getsize(f'assets/media/{fileName}')
 
-# Now print percentage of green pixels
-colorCount['colorCount']=(len(unique_colors))
+# We'll consider image quality as calculating the area of an image divided by its size
+imageQuality['imageQuality']=(size/(height*width))
 
 # Return results of processing
-results=colorCount
+results=imageQuality
 
 #*********************************************************************************/
 #                 /* STOP WRITING YOUR DAPP CODE UP UNTIL HERE.*/

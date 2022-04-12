@@ -25,7 +25,7 @@ params = json.loads(json_str) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Counting the number of unique colors inside an image.
+# Estimating the percentage of green in an image.
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
 from PIL import Image
 import numpy as np
@@ -33,36 +33,43 @@ import cv2
 import os
 import base64
 
-# Variable to store color count
-colorCount = {'colorCount':0}
+# Variable to store green percentage
+greenPercentage = {'greenPercentage':0}
 
 fileName = params['uParams'][0]['parameter2'] # Capture name of file
 fileData = base64.b64decode(params['uParams'][0]['parameter1']) # Capture file
 
 # Parse image file to Numpy array
 img_buffer = np.frombuffer(fileData, dtype=np.uint8)
-im = cv2.imdecode(img_buffer, flags=1)
+img = cv2.imdecode(img_buffer, flags=1)
 
 # Save file to local directory
 try:
-    cv2.imwrite(os.path.join('assets/media/', f'{fileName}'), im)
+    cv2.imwrite(os.path.join('assets/media/', f'{fileName}'), img)
     cv2.waitKey(0)
 except:
     print('Problem saving file!')
 
 # Load image and convert to HSV
 try:
-    img = Image.open(f'assets/media/{fileName}')
+    im = Image.open(f'assets/media/{fileName}').convert("HSV")
 except:
     print('Error processing file!')
 
-unique_colors = {img.getpixel((x,y)) for x in range(img.size[0]) for y in range(img.size[1])}
+# Extract Hue channel and make Numpy array for fast processing
+Hue = np.array(im.getchannel('H'))
+
+# Make mask of zeroes in which we will set greens to 1
+mask = np.zeros_like(Hue, dtype=np.uint8)
+
+# Set all green pixels to 1
+mask[(Hue>80) & (Hue<90)]=1
 
 # Now print percentage of green pixels
-colorCount['colorCount']=(len(unique_colors))
+greenPercentage['greenPercentage']=(mask.mean()*100)
 
 # Return results of processing
-results=colorCount
+results=greenPercentage
 
 #*********************************************************************************/
 #                 /* STOP WRITING YOUR DAPP CODE UP UNTIL HERE.*/
