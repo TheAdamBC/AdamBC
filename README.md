@@ -1,5 +1,5 @@
 
-# Adam Blockchain Computer (Adam BC):
+# Adam Blockchain Computer (Adam BC) [**BETA VERSION]:
 
 The Adam Blockchain Computer (Adam BC) is a decentralized blockchain based super computer.
 
