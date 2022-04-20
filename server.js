@@ -16,6 +16,7 @@ const io  = require('socket.io-client');
 
 const {AdamOS} = require('./cpu/AdamOS');
 const {setEnvValue} = require('./helpers/env_eol')
+const {save} = require('./helpers/appwrite/appwrite')
 const apiResponse = require("./helpers/apiResponse");
 //const {writeData, readData} = require('./helpers/save');
 const {parameterFunctions} = require('./app/config/parameterFunctions');
@@ -544,7 +545,7 @@ app.get('/messages', (req, res) => {
 app.post("/environment", (req, res) => {
 
     // Capture data sent
-    const {peer_mode, network, username, contact, worker_id, crypto_id, work_id} = req.body;
+    const {peer_mode, network, username, contact, worker_id, crypto_id, work_id, backup} = req.body;
 
     // Update Peer Mode
     if(peer_mode!=''){
@@ -592,6 +593,13 @@ app.post("/environment", (req, res) => {
     if(username!=''){
 
         setEnvValue("NETWORK_USERNAME", `'${username}'`);
+
+    }
+
+    // Update backup settings
+    if(backup!=''){
+
+        setEnvValue("DATABASE_BACKUP", `'${backup}'`);
 
     }
 
@@ -730,7 +738,11 @@ function cWorker (){
 
     // Write date to file
     async function writeData(dir, file, data) {
-
+        
+            if(process.env.DATABASE_BACKUP=='ON'){
+                await save(data)
+            }
+            
             try { 
                 return fs.writeFileSync(__dirname +  dir + file, JSON.stringify(data));
             } 
@@ -873,6 +885,10 @@ function pWorker (){
 
     // Write date to file
     async function writeData(dir, file, data) {
+        
+            if(process.env.DATABASE_BACKUP=='ON'){
+                await save(data)
+            }
 
             try { 
                 return fs.writeFileSync(__dirname +  dir + file, JSON.stringify(data));

@@ -64,7 +64,7 @@ Running Adam BC begins with installing it on your computer.
   <br/>
  
  - NPM node module dependencies installed; 
-  express, node-fetch, dotenv, ejs-lint, cookie-parser, socket.io, socket.io-client, bcrypt, uuid, sha256, crypto, redis, bull, jest, supertest, image-size, get-image-colors, wrtc, chalk, axios, commander, fs-extra, bonjour, inquirer, @babel/core, pdf-parse, IPFS.
+  express, node-fetch, dotenv, ejs-lint, cookie-parser, socket.io, socket.io-client, bcrypt, uuid, sha256, crypto, redis, bull, jest, supertest, image-size, get-image-colors, wrtc, chalk, axios, commander, fs-extra, bonjour, inquirer, @babel/core, pdf-parse, IPFS, appwrite.
 
 8. Run the Adam BC project using the npm command below.
 
@@ -943,6 +943,24 @@ _Adam BC Data Computation Graph:_
 
 <br/>
 
+## Database Backup:
+
+The data generated during an Adam BC computation can also be stored into a database instead of a JSON string.
+
+To achieve this we harness the power of Appwrite, a Backend-As-A-Service platform that supports both relational and unstructured data types.
+
+To get started;
+
+Follow the appwrite installation procedure: [https://appwrite.io/docs/installation](https://appwrite.io/docs/installation). 
+
+You could also take a look at Appwrite's core app: [https://github.com/appwrite/appwrite](https://github.com/appwrite/appwrite).
+
+Then update the appwrite script [appwrite.js](./helpers/appwrite/appwrite.js) by inserting the collection ID found in your appwrite console dashboard to the code line `const dataCollection = "[INSERT YOUR APPWRITE COLLECTION ID HERE]" // Use the ID found in your collection dashboard`.
+
+Finally update the environment settings in `.env` variable `DATABASE_BACKUP` to `DATABASE_BACKUP='ON'`.
+
+<br/>
+
 ## Peer Chat:
 
 Peers in the same peer-to-peer network can communicate and send messages to each other using the peer chat feature.
@@ -1275,6 +1293,8 @@ GLOBAL_NETWORK=''
 
 NETWORK_USERNAME=''
 
+DATABASE_BACKUP=''
+
 <br/>
 
 Definitions:
@@ -1292,6 +1312,8 @@ Definitions:
 - GLOBAL_NETWORK - join your peer team to a global computing network.
 
 - NETWORK_USERNAME - Unique username to identify user on the Adam BC Network.
+
+- DATABASE_BACKUP - Setting to backup data generated into database.
 
 <br/>
 
