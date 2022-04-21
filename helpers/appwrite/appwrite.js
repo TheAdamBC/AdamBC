@@ -1,4 +1,4 @@
-const { client } = require('./gateway');
+const { client, database } = require('./gateway');
 
 async function save (newData) {
 
@@ -10,7 +10,7 @@ async function save (newData) {
         const dataCollection = "[INSERT YOUR APPWRITE COLLECTION ID HERE]"; // Use the ID found in your collection dashboard
         
         if (item["configs"].running==true) {
-            await client.database.createDocument(dataCollection, newData, ["*"], [`peer:${item["configs"].builderID}`])
+            await database.createDocument(dataCollection, newData)
         }
     
     } catch(e) {
