@@ -1,11 +1,11 @@
-const { client, database } = require('./gateway');
+const { account, database } = require('./gateway');
 
 async function save (newData) {
 
     let item = JSON.parse(newData);
     
     try {
-        const session = await client.account.createAnonymousSession();
+        const session = await account.createAnonymousSession();
 
         const dataCollection = "[INSERT YOUR APPWRITE COLLECTION ID HERE]"; // Use the ID found in your collection dashboard
         
