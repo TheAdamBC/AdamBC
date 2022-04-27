@@ -44,20 +44,20 @@ im = cv2.imdecode(img_buffer, flags=1)
 
 # Save file to local directory
 try:
-    cv2.imwrite(os.path.join('assets/media/', f'{fileName}'), im)
+    cv2.imwrite(os.path.join('app/assets/media/', f'{fileName}'), im)
     cv2.waitKey(0)
 except:
     print('Problem saving file!')
 
 try:
-    img = cv2.imread(f'assets/media/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
+    img = cv2.imread(f'app/assets/media/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
 except:
     print('Error processing file!')
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-path = 'cascades/haarcascade_frontalface_default.xml'
-face_detector = cv2.CascadeClassifier(path)
+path = 'haarcascade_frontalface_default.xml'
+face_detector = cv2.CascadeClassifier(cv2.data.haarcascades+path)
 
 face_rects = face_detector.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30), flags = cv2.CASCADE_SCALE_IMAGE)
 
