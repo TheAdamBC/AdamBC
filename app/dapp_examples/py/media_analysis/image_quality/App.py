@@ -44,13 +44,13 @@ im = cv2.imdecode(img_buffer, flags=1)
 
 # Save file to local directory
 try:
-    cv2.imwrite(os.path.join('assets/media/', f'{fileName}'), im)
+    cv2.imwrite(os.path.join('app/assets/media/', f'{fileName}'), im)
     cv2.waitKey(0)
 except:
     print('Problem saving file!')
 
 try:
-    img = cv2.imread(f'assets/media/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
+    img = cv2.imread(f'app/assets/media/{fileName}', cv2.IMREAD_UNCHANGED) # Load file to OpenCV
 except:
     print('Error processing file!')
 
@@ -60,7 +60,7 @@ dimensions = img.shape
 # height, width, number of channels in image
 height = img.shape[0]
 width = img.shape[1]
-size = os.path.getsize(f'assets/media/{fileName}')
+size = os.path.getsize(f'app/assets/media/{fileName}')
 
 # We'll consider image quality as calculating the area of an image divided by its size
 imageQuality['imageQuality']=(size/(height*width))

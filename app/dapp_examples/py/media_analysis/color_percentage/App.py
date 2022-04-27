@@ -45,14 +45,14 @@ img = cv2.imdecode(img_buffer, flags=1)
 
 # Save file to local directory
 try:
-    cv2.imwrite(os.path.join('assets/media/', f'{fileName}'), img)
+    cv2.imwrite(os.path.join('app/assets/media/', f'{fileName}'), img)
     cv2.waitKey(0)
 except:
     print('Problem saving file!')
 
 # Load image and convert to HSV
 try:
-    im = Image.open(f'assets/media/{fileName}').convert("HSV")
+    im = Image.open(f'app/assets/media/{fileName}').convert("HSV")
 except:
     print('Error processing file!')
 
