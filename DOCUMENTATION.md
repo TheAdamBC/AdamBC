@@ -1818,3 +1818,20 @@ Facebook: [Facebook/TheAdamBC](https://facebook.com/TheAdamBC)
 <br/>
 
 YouTube: [YouTube/UCBwZFjeNSsjmoVtHagxTC4A](https://www.youtube.com/channel/UCBwZFjeNSsjmoVtHagxTC4A)
+
+<br/>
+
+<br/>
+
+## Demo DApps we need added to Adam BC
+
+- Sudoku Solver:
+  
+  A peer-to-peer sudoku solver.
+
+<br/>
+
+- N Queen Puzzle:
+  
+  A peer-to-peer N Queen puzzle solver.
+

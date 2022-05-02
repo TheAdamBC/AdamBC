@@ -7,6 +7,7 @@
     "dev": "npm install",
     "start": "node app.js",
     "test": "jest --forceExit ",
+    "pyinstall": "npm install && pip -m -r requirements.txt",
     "lint": "standard | snazzy",
     "lintfix": "standard --fix"
   },
