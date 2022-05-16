@@ -1075,6 +1075,12 @@ _Adam BC Network Architecture:_
 
 <br/>
 
+_Adam BC CPU System Design:_
+
+![Adam BC CPU System Design](/public/assets/readme/System_Design_Cpu.png)
+
+<br/>
+
 <br/>
 
 ## A. Peer Computing Network
