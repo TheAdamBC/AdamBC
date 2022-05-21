@@ -34,6 +34,9 @@ import os
 import base64
 import pytesseract
 
+# Path to where tesseract is installed on your system
+pytesseract.pytesseract.tesseract_cmd = (r'C:\Program Files\Tesseract-OCR\tesseract.exe')
+
 # Variable to store text identified
 textFound = {'textFound':0}
 
@@ -53,7 +56,8 @@ except:
 
 # Load image and convert to HSV
 try:
-    img = Image.open(f'app/assets/media/{fileName}')
+    #img = Image.open(f'app/assets/media/{fileName}')
+    img = cv2.imread(f'app/assets/media/{fileName}')
 except:
     print('Error processing file!')
 
@@ -66,10 +70,11 @@ noise = cv2.medianBlur(gray,3)
 # Convert to binary
 thresh = cv2.threshold(noise,0,255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
-# Configuring parameters for tesseract
-config = ('-l eng -- oem 3 --psm 3')
-
-text = pytesseract.image_to_string(thresh, config=config)
+# Extract text from image using tesseract
+try:
+    text = pytesseract.image_to_string(thresh, lang='eng', config='--psm 6')
+except:
+    print('Problem extracting text from image!')
 
 # Function to analyse image text found
 def countWords(A):
@@ -79,11 +84,8 @@ def countWords(A):
             dic[x]=A.count(x)
     return dic
 
-# Now print percentage of green pixels
-textFound['textFound']=countWords(textFound.split())
-
 # Return results of processing
-results=textFound
+results=countWords(text.split())
 
 #*********************************************************************************/
 #                 /* STOP WRITING YOUR DAPP CODE UP UNTIL HERE.*/

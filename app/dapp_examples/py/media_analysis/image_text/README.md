@@ -5,6 +5,8 @@ This demo example shows how to build a DApp that can analyse texts written insid
 
 ## How to run the DApp
 
+(NOTICE: To run this DApp, you must have Tesseract installed on your computer. Follow installation procedure here: https://github.com/tesseract-ocr/tesseract/wiki)
+
 Open the Command Line Terminal and type the command below (AppName being the name of the app you created).
 
 _Adam start AppName_
