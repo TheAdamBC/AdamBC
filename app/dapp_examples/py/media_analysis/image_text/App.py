@@ -37,9 +37,6 @@ import pytesseract
 # Path to where tesseract is installed on your system
 pytesseract.pytesseract.tesseract_cmd = (r'C:\Program Files\Tesseract-OCR\tesseract.exe')
 
-# Variable to store text identified
-textFound = {'textFound':0}
-
 fileName = params['uParams'][0]['parameter2'] # Capture name of file
 fileData = base64.b64decode(params['uParams'][0]['parameter1']) # Capture file
 
@@ -56,7 +53,6 @@ except:
 
 # Load image and convert to HSV
 try:
-    #img = Image.open(f'app/assets/media/{fileName}')
     img = cv2.imread(f'app/assets/media/{fileName}')
 except:
     print('Error processing file!')
