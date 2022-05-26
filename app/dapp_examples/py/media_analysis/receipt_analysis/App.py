@@ -25,7 +25,7 @@ params = json.loads(json_str) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Analysing Image Receipts
+# Analysing Receipt Images
 # Compare total expenses in receipts
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
 from PIL import Image
@@ -34,6 +34,8 @@ import cv2
 import os
 import base64
 import pytesseract
+from pytesseract import Output
+import re
 
 # Path to where tesseract is installed on your system
 pytesseract.pytesseract.tesseract_cmd = (r'C:\Program Files\Tesseract-OCR\tesseract.exe')
@@ -98,20 +100,52 @@ for c in contours:
     # Extract text from receipt using tesseract
     # Apply OCR on the cropped image
     try:
-        text = pytesseract.image_to_string(cropped, lang='eng')
+        details = pytesseract.image_to_data(cropped, output_type=Output.DICT)
     except:
         print('Problem extracting text from image!')
 
-# Function to analyse image text found
-def countWords(A):
-    dic={}
-    for x in A:
-        if not x in dic:
-            dic[x]=A.count(x)
-    return dic
+# Function to store total expenses found in receipt
+totals = {}
+
+# Get all text in receipt
+text = details['text']
+
+# Iterate through each receipt image text and identify total expenses
+for i,j in enumerate(text):
+    total=0
+
+    try:
+            nxt=re.findall(r'[-+]?(?:\d*\.\d+|\d+)',text[i+1])[0] # identify next word
+            if nxt!='': #check if next word is an integer or float number
+                    total = float(nxt) # if next word is a number, make it the total
+            else:
+                    pass
+    except:
+            pass
+
+    #iterate and store word
+    if text[i]=='Subtotal:' or text[i]=='Subtotal:' or text[i]=='Total' or text[i]=='Amount' or text[i]=='Total:' or text[i]=='Amount:' or text[i]=='Price:' or text[i]=='Price':
+            if text[i]=='Subtotal:':
+                    totals['Subtotal']=total
+            if text[i]=='Subtotal':
+                    totals['Subtotal']=total                  
+            if text[i]=='Total':
+                    totals['Total']=total 
+            if text[i]=='Amount':
+                    totals['Amount']=total
+            if text[i]=='Total:':
+                    totals['Total']=total   
+            if text[i]=='Amount:':
+                    totals['Amount']=total 
+            if text[i]=='Price:':
+                    totals['Price']=total 
+            if text[i]=='Price':
+                    totals['Price']=total                 
+    else:
+           pass
 
 # Return results of processing
-results=countWords(text.split())
+results=totals
 
 #*********************************************************************************/
 #                 /* STOP WRITING YOUR DAPP CODE UP UNTIL HERE.*/
