@@ -26,6 +26,7 @@ params = json.loads(json_str) # Load parameters values (params) to process
 
 # EXAMPLE:
 # Analysing Image Receipts
+# Compare total expenses in receipts
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
 from PIL import Image
 import numpy as np
