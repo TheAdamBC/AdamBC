@@ -124,7 +124,7 @@ for i,j in enumerate(text):
             pass
 
     #iterate and store word
-    if text[i]=='Subtotal:' or text[i]=='Subtotal:' or text[i]=='Total' or text[i]=='Amount' or text[i]=='Total:' or text[i]=='Amount:' or text[i]=='Price:' or text[i]=='Price':
+    if ((text[i]=='Subtotal:' or text[i]=='Subtotal:' or text[i]=='Total' or text[i]=='Amount' or text[i]=='Total:' or text[i]=='Amount:' or text[i]=='Price:' or text[i]=='Price') and total>0):
             if text[i]=='Subtotal:':
                     totals['Subtotal']=total
             if text[i]=='Subtotal':
