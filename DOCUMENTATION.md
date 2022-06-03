@@ -1081,9 +1081,15 @@ _Adam BC CPU System Design:_
 
 <br/>
 
-_Adam BC CPU Architecture Design:_
+_Adam BC CPU Architecture:_
 
 ![Adam BC CPU Architecture Design](/public/assets/readme/CPU.png)
+
+<br/>
+
+_Adam BC CLI App Creation Architecture:_
+
+![Adam BC CLI App Creation Architecture](/public/assets/readme/CLI.png)
 
 <br/>
 
