@@ -7,7 +7,7 @@ Data enthusiasts with excess or redundant computing power can pull their RAM res
 
 The peer-to-peer computer can then be used to crunch through complex datasets, like performing machine learning algorithms, data analysis and AI training.
 
-Small AI Research labs, Individual scientists, Institutions on the continent that cannot afford tens of millions of dollars to hire large super computers can pool together a group of personal computers and use Adam BC's peer to peer computing mode to do hyper computations.
+Small AI Research labs, Individual scientists, Institutions and Businesses that cannot afford to hire large super computers can pool together a group of personal computers and use Adam BC's peer to peer computing mode to perform hyper computations.
 
 Consider Adam BC to be the _“poor person’s super computer”_.
 

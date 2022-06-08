@@ -3,7 +3,7 @@
 
 The Adam Blockchain Computer (Adam BC) is a decentralized blockchain based super computer.
 
-Small AI Research labs, Individual scientists, Institutions and Businesses that cannot afford tens of millions of dollars to hire large super computers can pool together a group of personal computers and use Adam BC's peer to peer computing mode to do hyper computations.
+Small AI Research labs, Individual scientists, Institutions and Businesses that cannot afford to hire large super computers can pool together a group of personal computers and use Adam BC's peer to peer computing mode to perform hyper computations.
 
 Consider Adam BC to be the _“poor person’s super computer”_.
 
