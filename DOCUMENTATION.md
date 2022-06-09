@@ -1093,6 +1093,12 @@ _Adam BC CLI App Creation Architecture:_
 
 <br/>
 
+_Adam BC IPFS Peer to Peer Architecture:_
+
+![Adam BC IPFS Peer to Peer Architecture](/public/assets/readme/P2P.png)
+
+<br/>
+
 <br/>
 
 ## A. Peer Computing Network
