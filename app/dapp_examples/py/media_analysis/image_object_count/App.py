@@ -25,7 +25,7 @@ params = json.loads(json_str) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Analysing objects appearing inside an image.
+# Counting number of objects appearing inside an image.
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
 from PIL import Image
 import numpy as np

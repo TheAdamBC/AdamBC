@@ -1,7 +1,7 @@
 
-# Adam BC DApp Demo Example - Image Objects Analysis
+# Adam BC DApp Demo Example - Image Object Appearance Count
 
-This demo example shows how to build a DApp that can analyse objects appearing inside an image.
+This demo example shows how to build a DApp that can count and rank the number of objects appearing inside an image.
 
 ## How to run the DApp
 
