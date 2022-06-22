@@ -94,7 +94,10 @@ indices_yolo = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
 
 if len(indices_yolo) > 0:
     for i in indices_yolo.flatten():
-        objects[classes_names[classIDs[i]]]=confidences[i]
+        if not classes_names[classIDs[i]] in objects:
+            objects[classes_names[classIDs[i]]]=1
+        else:
+            objects[classes_names[classIDs[i]]]=objects[classes_names[classIDs[i]]]+1
 
 # Return results of processing
 results=objects
