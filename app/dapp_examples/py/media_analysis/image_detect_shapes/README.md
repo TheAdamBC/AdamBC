@@ -1,7 +1,7 @@
 
 # Adam BC DApp Demo Example - Image Shapes Detection
 
-This demo example shows how to build a DApp that can identify the shapes contained inside an image.
+This demo example shows how to build a DApp that can identify the polygon shapes contained inside an image.
 
 ## How to run the DApp
 
