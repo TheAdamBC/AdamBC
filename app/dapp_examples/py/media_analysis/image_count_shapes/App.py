@@ -25,7 +25,7 @@ params = json.loads(json_str) # Load parameters values (params) to process
 #*********************************************************************************/
 
 # EXAMPLE:
-# Identifying and counting the kind of shapes inside an image.
+# Identifying and counting the kind of polygon shapes inside an image.
 # Import necessary DApp resources, scripts, assets and modules needed for the task.
 from PIL import Image
 import numpy as np
@@ -59,8 +59,11 @@ except:
 # converting image into grayscale image
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
   
+#noise removal
+noise = cv2.medianBlur(gray,3)
+  
 # setting threshold of gray image
-_, threshold = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+_, threshold = cv2.threshold(noise, 127, 255, cv2.THRESH_BINARY)
   
 # using a findContours() function
 contours, _ = cv2.findContours(
