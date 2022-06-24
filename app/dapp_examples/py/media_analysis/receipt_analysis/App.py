@@ -115,7 +115,7 @@ for i,j in enumerate(text):
     total=0
 
     try:
-            nxt=re.findall(r'[-+]?(?:\d*\.\d+|\d+)',text[i+1])[0] # identify next word
+            nxt=re.sub(r'[^\d.]+', '', text[i+1]) # identify next word
             if nxt!='': #check if next word is an integer or float number
                     total = float(nxt) # if next word is a number, make it the total
             else:
