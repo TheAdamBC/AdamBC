@@ -116,14 +116,18 @@ for i,j in enumerate(text):
 
     try:
             nxt=re.sub(r'[^\d.]+', '', text[i+1]) # identify next word
-            ltr=re.sub(r'[^\d.]+', '', text[i+2]) # identify next word
+            ltr=re.sub(r'[^\d.]+', '', text[i+2]) # identify latter word
+            third=re.sub(r'[^\d.]+', '', text[i+3]) # identify third word from first
             if nxt!='': #check if next word is an integer or float number
                     total = float(nxt) # if next word is a number, make it the total
             else:
                     if ltr!='': #check if next word is an integer or float number
                             total = float(ltr) # if latter word is a number, make it the total 
                     else:
-                            pass
+                            if third!='': #check if last word from first is an integer or float number
+                                    total = float(third) # if last word is a number, make it the total 
+                            else:
+                                    pass
     except:
             pass
 
