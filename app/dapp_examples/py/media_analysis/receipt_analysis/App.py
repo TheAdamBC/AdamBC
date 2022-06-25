@@ -110,6 +110,8 @@ totals = {}
 # Get all text in receipt
 text = details['text']
 
+text=list(filter(None,text))
+
 # Iterate through each receipt image text and identify total expenses
 for i,j in enumerate(text):
     total=0
