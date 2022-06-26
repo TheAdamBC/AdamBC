@@ -5,7 +5,7 @@ This demo example shows how to build a DApp that can read an image receipt and i
 
 ## How to run the DApp
 
-(NOTICE: To run this DApp, you must have Tesseract installed on your computer. Follow installation procedure here: https://github.com/tesseract-ocr/tesseract/wiki)
+(NOTICE: To run this DApp, you must have Tesseract installed on your computer. Follow installation procedure here: https://github.com/tesseract-ocr/tesseract/wiki. Then go to your DApp's folder and update the `App.py` pytesseract configuration variable `pytesseract.pytesseract.tesseract_cmd` to reflect where the tesseract files are located.)
 
 Open the Command Line Terminal and type the command below (AppName being the name of the app you created).
 
