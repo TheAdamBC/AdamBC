@@ -70,9 +70,7 @@ thresh = cv2.threshold(noise,0,255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
 # Create horizontal kernel and dilate to connect text characters
 kernel = np.ones((1, 1), np.uint8)
-thresh = cv2.dilate(thresh, kernel, iterations=1)
-thresh = cv2.erode(thresh, kernel, iterations=1)
-dilation = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
+dilation = cv2.dilate(thresh, kernel, iterations=1)
 
 # Find contours and filter using aspect ratio
 # Remove non-text contours by filling in the contour
@@ -80,10 +78,7 @@ dilation = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
 # Then rectangular part is cropped and passed on
 # to pytesseract for extracting text from it
 # Extracted text is then written into the text file
-blur = cv2.threshold(cv2.GaussianBlur(dilation, (5, 5), 0), 150, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-blur = cv2.threshold(cv2.bilateralFilter(blur, 5, 75, 75), 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-blur = cv2.adaptiveThreshold(cv2.bilateralFilter(blur, 9, 75, 75), 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 2)
-contours, hierarchy = cv2.findContours(blur, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
 # Creating a copy of image
 im2 = img.copy()
