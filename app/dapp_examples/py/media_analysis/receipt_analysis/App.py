@@ -134,7 +134,7 @@ for i,j in enumerate(text):
             pass
 
     #iterate and store word
-    if ((text[i].lower()=='Subtotal:'.lower() or text[i].lower()=='Subtotal'.lower() or text[i].lower()=='Total'.lower() or text[i].lower()=='Total:'.lower() or text[i].lower()=='Amount'.lower() or text[i].lower()=='Amount:'.lower() or text[i].lower()=='Price:'.lower() or text[i].lower()=='Price'.lower()) and total>0):
+    if ((text[i].lower()=='Subtotal:'.lower() or text[i].lower()=='Subtotal'.lower() or text[i].lower()=='Total'.lower() or text[i].lower()=='Total:'.lower() or text[i].lower()=='Amount'.lower() or text[i].lower()=='Amount:'.lower() or text[i].lower()=='Price:'.lower() or text[i].lower()=='Price'.lower() or text[i].lower()=='Tax:'.lower() or text[i].lower()=='Tax'.lower() or text[i].lower()=='Balance:'.lower() or text[i].lower()=='Balance'.lower() or text[i].lower()=='Sub-total:'.lower() or text[i].lower()=='Sub-total'.lower()) and total>0):
             if text[i]=='Subtotal:':
                     totals['Subtotal']=total
             if text[i]=='Subtotal':
@@ -150,7 +150,19 @@ for i,j in enumerate(text):
             if text[i]=='Price:':
                     totals['Price']=total 
             if text[i]=='Price':
-                    totals['Price']=total                       
+                    totals['Price']=total   
+            if text[i]=='Sub-total:':
+                    totals['Subtotal']=total
+            if text[i]=='Sub-total':
+                    totals['Subtotal']=total    
+            if text[i]=='Tax:':
+                    totals['Tax']=total
+            if text[i]=='Tax':
+                    totals['Tax']=total      
+            if text[i]=='Balance:':
+                    totals['Balance']=total
+            if text[i]=='Balance':
+                    totals['Balance']=total                       
     else:
            pass
 
