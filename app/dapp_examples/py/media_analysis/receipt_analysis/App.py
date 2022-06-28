@@ -135,33 +135,33 @@ for i,j in enumerate(text):
 
     #iterate and store word
     if ((text[i].lower()=='Subtotal:'.lower() or text[i].lower()=='Subtotal'.lower() or text[i].lower()=='Total'.lower() or text[i].lower()=='Total:'.lower() or text[i].lower()=='Amount'.lower() or text[i].lower()=='Amount:'.lower() or text[i].lower()=='Price:'.lower() or text[i].lower()=='Price'.lower() or text[i].lower()=='Tax:'.lower() or text[i].lower()=='Tax'.lower() or text[i].lower()=='Balance:'.lower() or text[i].lower()=='Balance'.lower() or text[i].lower()=='Sub-total:'.lower() or text[i].lower()=='Sub-total'.lower()) and total>0):
-            if text[i]=='Subtotal:':
+            if text[i].lower()=='subtotal:':
                     totals['Subtotal']=total
-            if text[i]=='Subtotal':
+            if text[i].lower()=='subtotal':
                     totals['Subtotal']=total                  
-            if text[i]=='Total':
+            if text[i].lower()=='total':
                     totals['Total']=total 
-            if text[i]=='Total:':
+            if text[i].lower()=='total:':
                     totals['Total']=total   
-            if text[i]=='Amount':
+            if text[i].lower()=='amount':
                     totals['Amount']=total                    
-            if text[i]=='Amount:':
+            if text[i].lower()=='amount:':
                     totals['Amount']=total 
-            if text[i]=='Price:':
+            if text[i].lower()=='price:':
                     totals['Price']=total 
-            if text[i]=='Price':
+            if text[i].lower()=='price':
                     totals['Price']=total   
-            if text[i]=='Sub-total:':
+            if text[i].lower()=='sub-total:':
                     totals['Subtotal']=total
-            if text[i]=='Sub-total':
+            if text[i].lower()=='sub-total':
                     totals['Subtotal']=total    
-            if text[i]=='Tax:':
+            if text[i].lower()=='tax:':
                     totals['Tax']=total
-            if text[i]=='Tax':
+            if text[i].lower()=='tax':
                     totals['Tax']=total      
-            if text[i]=='Balance:':
+            if text[i].lower()=='balance:':
                     totals['Balance']=total
-            if text[i]=='Balance':
+            if text[i].lower()=='balance':
                     totals['Balance']=total                       
     else:
            pass
