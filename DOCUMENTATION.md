@@ -1718,6 +1718,8 @@ REQUIREMENTS:
 
 - Use any npm modules you think would be useful.
 
+- We are particularly interested in knowing which npm module you'll use to implement the Peer-to-peer (P2P) messaging feature. We use IPFS. To your credit you could use another P2P communication module that you find better. 
+
 HOW IT SHOULD WORK:
 
 - Take a look at the app's skeleton: https://github.com/TheAdamBC/Community/tree/main/developer_challenge/p2p
