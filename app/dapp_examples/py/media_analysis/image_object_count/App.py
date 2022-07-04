@@ -56,9 +56,9 @@ try:
 except:
     print('Error processing file!')
 
-classes_names = open('coco.names').read().strip().split('\n')
+classes_names = open(r'D:\Software\Yolo\coco.names').read().strip().split('\n')
 
-net_yolo = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'yolov3.weights')
+net_yolo = cv2.dnn.readNetFromDarknet(r'D:\Software\Yolo\yolov3.cfg', r'D:\Software\Yolo\yolov3.weights')
 net_yolo.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 #net_yolo.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
