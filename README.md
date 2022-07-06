@@ -125,6 +125,24 @@ Click 'Start' to start computation.
 
 </br>
 
+_Adam BC has started:_
+
+![Adam BC Initial Reset State](/public/assets/readme/Reset_800.png)
+
+<br/>
+
+_Adam BC in Running State:_
+
+![Adam BC Running State](/public/assets/readme/Running_800.png)
+
+<br/>
+
+_Adam BC Computation Report:_
+
+![Adam BC Computation Report](/public/assets/readme/UI_800.png)
+
+</br>
+
 ### Deleting an Adam BC DApp:
 
 To delete a DApp from Adam BC, run the command below in the Command terminal. 
