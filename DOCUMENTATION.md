@@ -55,11 +55,15 @@ Running Adam BC begins with installing it on your computer.
 
 6. Unzip the Adam BC folder you downloaded and open the folder in your code editor command terminal.
 
-7. Open command prompt run the npm installation below to install Adam BC's dependency modules.
+7. Open command prompt run the npm installation below to install Adam BC's NPM dependency modules.
  
   <br/>
 
   _npm install_
+
+  Then install python dependencies (Make sure to have pip8 or greater installed).
+  
+  _npm run pyinstall_
 
   <br/>
  
