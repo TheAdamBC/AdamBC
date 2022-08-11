@@ -43,6 +43,10 @@ Open the unzipped or cloned Adam BC app folder in your favorite code editor (we 
 
 _npm install_
 
+Then install python dependencies (Make sure to have pip8 or greater installed).
+
+_npm run pyinstall_
+
 </br>
 
 ### Install 'Adam' Command Line Interface (CLI):
