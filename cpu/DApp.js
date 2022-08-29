@@ -72,7 +72,7 @@ process.on('message', async (params) => {
 
     // Aggregate results from processing
     const result = {     
-        results: app // Results
+        results: JSON.parse(app) // Results
     }; 
 
     // Define processing parameters

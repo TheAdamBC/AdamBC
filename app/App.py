@@ -39,6 +39,6 @@ for num in range(params['tPartition']-params['xPartition'], params['tPartition']
 #*********************************************************************************/                 
 
 # Results must return valid JSON Object
-print(results)
+print(json.dumps(results))
 sys.stdout.flush()
 

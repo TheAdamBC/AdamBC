@@ -107,6 +107,6 @@ results=objects
 #*********************************************************************************/                 
 
 # Results must return valid JSON Object
-print(results)
+print(json.dumps(results))
 sys.stdout.flush()
 
