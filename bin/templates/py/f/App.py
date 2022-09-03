@@ -42,6 +42,6 @@ results = countWords(params['uParams'][0]['parameter1'].split())
 #*********************************************************************************/                 
 
 # Results must return valid JSON Object
-print(results)
+print(json.dumps(results))
 sys.stdout.flush()
 
